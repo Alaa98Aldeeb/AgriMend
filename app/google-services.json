@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "388953078490",
+    "firebase_url": "https://agrimend-ab8c5.firebaseio.com",
+    "project_id": "agrimend-ab8c5",
+    "storage_bucket": "agrimend-ab8c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388953078490:android:3fa55f043c5f3cfcb203e3",
+        "android_client_info": {
+          "package_name": "com.example.agrimend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388953078490-ppfcohloqomd0cmo1n4ar7hkc449bp3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agrimend",
+            "certificate_hash": "a9c84c39d3d64bfc4d418b0d6f9d208c837f875f"
+          }
+        },
+        {
+          "client_id": "388953078490-g90p15d9eu3snl6llg4taesoq0166bp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBETqzfjjXeutxzctPBS0UcdqcSbOm-eao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388953078490-g90p15d9eu3snl6llg4taesoq0166bp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

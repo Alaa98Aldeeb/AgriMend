@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/dashed"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/userProfile"
+                android:title="@string/profile_menue_title"
+                android:icon="@drawable/resize_profile_icon" />
+            <item
+                android:id="@+id/dissComm"
+                android:title="@string/discussion_community_menu_title"
+                android:icon="@drawable/resize_talk_icon" />
+            <item
+                android:id="@+id/testPlant"
+                android:title="@string/test_plant_menu_title"
+                android:icon="@drawable/resize_testp_icon" />
+            <item
+                android:id="@+id/news"
+                android:title="@string/environment_news_menu_title"
+                android:icon="@drawable/resize_news_icon" />
+            <item
+                android:id="@+id/comm"
+                android:title="@string/add_post_menu_title"
+                android:icon="@drawable/resize_addpost_icon" />
+            <item
+                android:id="@+id/share"
+                android:title="@string/share_menu_title"
+                android:icon="@drawable/resize_share_icon" />
+        </menu>
+    </item>
+</menu>

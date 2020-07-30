@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.agrimend">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/new_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DetailsTreatment"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DiagnosePlant"
+            android:label="Test Plant"/>
+        <activity
+            android:name=".resetPassword"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".introSlides"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".news_list_details"
+            android:label="News Details" />
+        <activity
+            android:name=".PostsLists"
+            android:label="Community Posts" />
+        <activity
+            android:name=".PostDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CommunityHome"
+            android:label="Add New Post" />
+        <activity
+            android:name=".editProfile"
+            android:label="Change Profile Info" />
+        <activity
+            android:name=".profileUser"
+            android:label="Your Profile" />
+        <activity
+            android:name=".welcomMessageFinal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".welcomMessageFourth"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".welcomMessageThird"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".welcomMessageSecond"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".welcomMessageFirst"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".home_news"
+            android:label="Latest News" />
+        <activity
+            android:name=".signup_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".login_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".startup_page"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

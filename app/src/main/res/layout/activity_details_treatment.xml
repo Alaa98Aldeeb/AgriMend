@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailsTreatment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:id="@+id/mPhotoImageView"
+        android:contentDescription="@string/image" />
+
+    <TextView
+        android:id="@+id/DiseaseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disease_name"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333232"
+        android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/treat"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#A0B589"
+            android:fontFamily="sans-serif-black"/>
+        <TextView
+            android:id="@+id/choose_treat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_treatment"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="10dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:background="#D6E8C1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/chemical_treatment"
+        android:textColor="#0B1501"
+        android:padding="7dp"
+        android:textStyle="bold" />
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F4F4ED"
+                android:padding="10dp">
+            <TextView
+                android:id="@+id/chemicalTreat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/treat"
+                android:lineHeight="28dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FBFBFB">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:background="#D6E8C1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@string/general_treatment"
+                    android:textColor="#0B1501"
+                    android:textStyle="bold"
+                    android:padding="7dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/generalTreat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/treat"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:textColor="#333232"
+        android:padding="13dp"
+        android:lineHeight="30dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/openCommunity"
+                android:text="@string/browsing_community"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#fff"
+                android:background="@drawable/gradient"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="35dp">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="#333232"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/or"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textColor="#000"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="#333232"/>
+        </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/checkAnotherPlant"
+                android:text="@string/new_plant"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#fff"
+                android:background="@drawable/gradient"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editProfile"
+    android:background="#EEFFDD">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/vector_background"
+            android:id="@+id/backgroundProfile">
+
+            <ImageView
+                android:id="@+id/newUserPhoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/profile_image_shadow"
+                android:contentDescription="@string/image" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/backgroundProfile"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/border_bottom_profile_data">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/resize_username_icon"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/image" />
+                <EditText
+                    android:id="@+id/newUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginStart="20dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_bottom_profile_data">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/resize_email_icon"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/image" />
+                <EditText
+                    android:id="@+id/newUserEmail"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginStart="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_bottom_profile_data">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/resize_location_signup_icon"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/image" />
+                <EditText
+                    android:id="@+id/newUserLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginStart="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_bottom_profile_data">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/resize_password_icon"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/image" />
+                <EditText
+                    android:id="@+id/newUserPassword"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginStart="20dp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:text="@string/save_changes_btn"
+                android:id="@+id/editProfileData"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
