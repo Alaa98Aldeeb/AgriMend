@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -20,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import org.jsoup.Jsoup;
@@ -42,6 +44,7 @@ public class news_list_details extends AppCompatActivity {
     ImageView imageView;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private ProgressBar progressBar;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -129,6 +132,7 @@ public class news_list_details extends AppCompatActivity {
         setContentView(R.layout.new_list_details);
         news_list_details.this.overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left);
 
+        progressBar = findViewById(R.id.newListDetailsProgressBar);
         imageView = findViewById(R.id.imageViewDetails);
         textViewTitle = findViewById(R.id.textViewTitle);
         textViewDescription = findViewById(R.id.textViewDesc);
@@ -137,7 +141,18 @@ public class news_list_details extends AppCompatActivity {
         textViewDescription.setText(getIntent().getStringExtra("description"));
         textViewDate.setText(dateFormat(getIntent().getStringExtra("date")));
 
-        Picasso.get().load(getIntent().getStringExtra("image")).into(imageView);
+        progressBar.setVisibility(View.VISIBLE);
+        Picasso.get().load(getIntent().getStringExtra("image")).into(imageView, new Callback() {
+            @Override
+            public void onSuccess() {
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
     }
 
     public String dateFormat(String pugD){

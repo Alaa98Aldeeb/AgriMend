@@ -1,16 +1,25 @@
 package com.example.agrimend;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -87,6 +96,8 @@ public class PostsLists extends AppCompatActivity {
     DatabaseReference databaseReference;
     private ProgressBar myProgressBar;
     List<Post> postList;
+    TextView defaultText;
+    RelativeLayout mainLayout;
 
     @Override
     public void onBackPressed() {
@@ -100,29 +111,40 @@ public class PostsLists extends AppCompatActivity {
         setContentView(R.layout.posts_lists);
         PostsLists.this.overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left);
 
-            // Inflate the layout for this fragment
             postRecyclerView  = findViewById(R.id.postRV);
             postRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             postRecyclerView.setHasFixedSize(true);
             firebaseDatabase = FirebaseDatabase.getInstance();
             databaseReference = firebaseDatabase.getReference("Posts");
             myProgressBar = findViewById(R.id.progressBarCommunity);
+            mainLayout = findViewById(R.id.postListLayout);
+            defaultText = new TextView(this);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                postList = new ArrayList<>();
-                for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
-
-                    Post post = postsnap.getValue(Post.class);
+                if (!dataSnapshot.hasChildren()){
                     myProgressBar.setVisibility(View.GONE);
-                    postList.add(post) ;
-                }
-                postAdapter = new PostAdapter(PostsLists.this,postList);
-                postRecyclerView.setAdapter(postAdapter);
-            }
+                    defaultText.setText("No Posts Exist Yet");
+                    defaultText.setTextSize(16);
+                    defaultText.setTextColor(Color.GRAY);
+                    defaultText.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+                    defaultText.setGravity(Gravity.CENTER);
+                    mainLayout.addView(defaultText);
+                }else {
+                    postList = new ArrayList<>();
+                    for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
+                        Post post = postsnap.getValue(Post.class);
+                        myProgressBar.setVisibility(View.GONE);
+                        postList.add(post) ;
+                    }
+                    postAdapter = new PostAdapter(PostsLists.this,postList);
+                    postRecyclerView.setAdapter(postAdapter);
+                }
+            }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
