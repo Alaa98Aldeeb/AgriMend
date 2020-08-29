@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DetailsTreatment"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity android:name=".DiagnosePlant"
             android:label="Test Plant"
             android:screenOrientation="portrait"/>
@@ -41,7 +41,7 @@
         <activity
             android:name=".CommunityHome"
             android:label="Add New Post"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".editProfile"
             android:label="Change Profile Info"
