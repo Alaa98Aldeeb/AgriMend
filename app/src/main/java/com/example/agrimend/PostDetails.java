@@ -110,7 +110,7 @@ public class PostDetails extends AppCompatActivity {
                 String comment_content = editTextComment.getText().toString();
                 String uid = firebaseUser.getUid();
                 String uname = firebaseUser.getDisplayName();
-                int img = R.drawable.resize_check_icon;
+                int img = R.drawable.check;
                 Date currentTime = Calendar.getInstance().getTime();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm");
                 String date = dateFormat.format(currentTime);

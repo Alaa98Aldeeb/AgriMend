@@ -30,6 +30,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
@@ -182,11 +183,37 @@ public class signup_page extends AppCompatActivity {
                             }
 
                         }else {
-                            loadingDialog.dismissDialog();
-                            showMessage("Account Creation Failed" + task.getException().getMessage());
+                            refrech();
+                            try{
+                                throw task.getException();
+                            }
+                            catch (FirebaseAuthUserCollisionException e) {
+                                loadingDialog.dismissDialog();
+                                showMessage("Email already exsit");
+                                startActivity(new Intent(signup_page.this, login_page.class));
+                            }
+                            catch (Exception ex){
+                                refrech();
+                                loadingDialog.dismissDialog();
+                                showMessage("Account Creation Failed" + task.getException().getMessage());
+                                editText1.setText("");
+                                editText2.setText("");
+                                editText3.setText("");
+                                editText4.setText("");
+                                editText5.setText("");
+                            }
                         }
                     }
                 });
+    }
+
+    public void refrech(){
+        Intent intent = getIntent();
+        overridePendingTransition(0,0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0,0);
+        startActivity(intent);
     }
 
     private void updateUserInfo(String name, FirebaseUser currentUser) {

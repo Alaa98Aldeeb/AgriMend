@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editProfile"
-    android:background="#EEFFDD">
+    android:layoutDirection="ltr"
+    android:background="#EEFFDD"
+    tools:context=".editProfile">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#EEFFDD">
+    <RelativeLayout
+        android:id="@+id/relativeLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <RelativeLayout
+            android:id="@+id/backgroundProfile"
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            android:background="@drawable/vector_background"
-            android:id="@+id/backgroundProfile">
+            android:background="@drawable/vector_background">
 
             <ImageView
                 android:id="@+id/newUserPhoto"
@@ -28,136 +39,147 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@id/backgroundProfile"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp">
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@drawable/border_bottom_profile_data"
                 android:orientation="horizontal"
-                android:padding="10dp"
-                android:background="@drawable/border_bottom_profile_data">
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/resize_username_icon"
                     android:layout_marginStart="20dp"
-                    android:contentDescription="@string/image" />
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/name" />
+
                 <EditText
                     android:id="@+id/newUserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="12sp"
-                    android:textColor="#000"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="normal"
                     android:background="@android:color/transparent"
-                    android:layout_marginStart="20dp" />
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:padding="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/border_bottom_profile_data">
+                android:background="@drawable/border_bottom_profile_data"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/resize_email_icon"
                     android:layout_marginStart="20dp"
-                    android:contentDescription="@string/image" />
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/mail" />
+
                 <EditText
                     android:id="@+id/newUserEmail"
-                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="12sp"
-                    android:textColor="#000"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="normal"
                     android:background="@android:color/transparent"
-                    android:layout_marginStart="20dp" />
+                    android:fontFamily="sans-serif"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:padding="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/border_bottom_profile_data">
+                android:background="@drawable/border_bottom_profile_data"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/resize_location_signup_icon"
                     android:layout_marginStart="20dp"
-                    android:contentDescription="@string/image" />
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/location" />
+
                 <EditText
                     android:id="@+id/newUserLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="12sp"
-                    android:textColor="#000"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="normal"
                     android:background="@android:color/transparent"
-                    android:layout_marginStart="20dp" />
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:padding="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/border_bottom_profile_data">
+                android:background="@drawable/border_bottom_profile_data"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/resize_password_icon"
                     android:layout_marginStart="20dp"
-                    android:contentDescription="@string/image" />
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/pass" />
+
                 <EditText
                     android:id="@+id/newUserPassword"
-                    android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="12sp"
-                    android:textColor="#000"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="normal"
                     android:background="@android:color/transparent"
-                    android:layout_marginStart="20dp" />
+                    android:fontFamily="sans-serif"
+                    android:inputType="textPassword"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <Button
+                android:id="@+id/editProfileData"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/gradient"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
-                android:layout_gravity="center"
+                android:background="@drawable/gradient"
+                android:fontFamily="sans-serif"
                 android:text="@string/save_changes_btn"
-                android:id="@+id/editProfileData"
+                android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="13sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
     </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

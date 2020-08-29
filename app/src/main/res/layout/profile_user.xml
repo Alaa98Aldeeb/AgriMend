@@ -1,159 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profileUser"
-    android:background="#EEFFDD">
+    android:background="#EEFFDD"
+    android:layoutDirection="ltr"
+    tools:context=".profileUser">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="@drawable/vector_background"
-        android:id="@+id/backgroundProfile">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/userPhoto"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/profile_image_shadow"
-            android:contentDescription="@string/image" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userPhoto"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/userFullName"
-            android:fontFamily="sans-serif"
-            android:textSize="25sp"
-            android:layout_marginTop="7dp"
-            android:textColor="#fff"
-            android:textStyle="normal"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userFullName"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/userExpert"
-            android:fontFamily="sans-serif"
-            android:textSize="15sp"
-            android:textColor="#F1ECEC"
-            android:textStyle="normal"/>
-
-    </RelativeLayout>
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/backgroundProfile"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp">
+        android:background="#EEFFDD">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/backgroundProfile"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/vector_background">
+
+            <ImageView
+                android:id="@+id/userPhoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/profile_image_shadow"
+                android:contentDescription="@string/image" />
+
+            <TextView
+                android:id="@+id/userFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userPhoto"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="7dp"
+                android:fontFamily="sans-serif"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/userExpert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userFullName"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif"
+                android:textColor="#F1ECEC"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:background="@drawable/border_bottom_profile_data">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/resize_email_icon"
-                android:layout_marginStart="20dp"
-                android:contentDescription="@string/image" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:textSize="12sp"
-                android:id="@+id/userFullEmail"
-                android:textColor="#000"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:layout_marginStart="20dp" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/backgroundProfile"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@drawable/border_bottom_profile_data"
                 android:orientation="horizontal"
-                android:layout_marginTop="15dp"
-                android:padding="10dp"
-                android:background="@drawable/border_bottom_profile_data">
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/resize_location_signup_icon"
                     android:layout_marginStart="20dp"
-                    android:contentDescription="@string/image" />
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/mail" />
+
                 <TextView
+                    android:id="@+id/userFullEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="12sp"
-                    android:id="@+id/userFullLocation"
-                    android:textColor="#000"
-                    android:textStyle="normal"
                     android:fontFamily="sans-serif"
-                    android:layout_marginStart="20dp" />
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
-            android:background="@drawable/border_bottom_profile_data">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/resize_password_icon"
-                android:layout_marginStart="20dp"
-                android:contentDescription="@string/image" />
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:textSize="12sp"
-                android:id="@+id/userFullPassword"
-                android:textColor="#000"
-                android:textStyle="normal"
-                android:fontFamily="sans-serif"
-                android:inputType="textPassword"
-                android:layout_marginStart="20dp"
-                tools:ignore="TextViewEdits" />
-        </LinearLayout>
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_bottom_profile_data"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/userFullLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_bottom_profile_data"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/pass" />
+
+                <TextView
+                    android:id="@+id/userFullPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif"
+                    android:inputType="textPassword"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    tools:ignore="TextViewEdits" />
+            </LinearLayout>
 
             <Button
+                android:id="@+id/editProfile"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/gradient"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
-                android:layout_gravity="center"
+                android:background="@drawable/gradient"
+                android:fontFamily="sans-serif"
                 android:text="@string/edit_profile"
-                android:id="@+id/editProfile"
+                android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="13sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
     </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

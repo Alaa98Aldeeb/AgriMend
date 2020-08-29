@@ -13,60 +13,79 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
         <activity android:name=".DetailsTreatment"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".DiagnosePlant"
-            android:label="Test Plant"/>
+            android:label="Test Plant"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".resetPassword"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".introSlides"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".news_list_details"
-            android:label="News Details" />
+            android:label="News Details"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PostsLists"
-            android:label="Community Posts" />
+            android:label="Community Posts"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PostDetails"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CommunityHome"
-            android:label="Add New Post" />
+            android:label="Add New Post"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".editProfile"
-            android:label="Change Profile Info" />
+            android:label="Change Profile Info"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".profileUser"
-            android:label="Your Profile" />
+            android:label="Your Profile"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomMessageFinal"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomMessageFourth"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomMessageThird"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomMessageSecond"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomMessageFirst"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".home_news"
-            android:label="Latest News" />
+            android:label="Latest News"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".signup_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".login_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".startup_page"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

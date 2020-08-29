@@ -65,17 +65,17 @@ public class CommentAdapter extends  RecyclerView.Adapter<CommentAdapter.Comment
             holder.tv_date.setText(mData.get(position).getTimestamp());
 
             if (mData.get(position).getClick()){
-                holder.ibCheckImg.setImageResource(R.drawable.resize_check_solved_icon);
+                holder.ibCheckImg.setImageResource(R.drawable.check_solved);
                 holder.tv_Check.setText("Solution");
                 holder.tv_Check.setTextColor(Color.parseColor("#4caf50"));
             }else {
-                holder.ibCheckImg.setImageResource(R.drawable.resize_check_icon);
+                holder.ibCheckImg.setImageResource(R.drawable.check);
                 holder.tv_Check.setText("Solution");
             }
             holder.section.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.ibCheckImg.setImageResource(R.drawable.resize_check_solved_icon);
+                    holder.ibCheckImg.setImageResource(R.drawable.check_solved);
                     holder.tv_Check.setTextColor(Color.parseColor("#4caf50"));
                     DatabaseReference comments = FirebaseDatabase.getInstance().getReference("Comments");
                     comments.addValueEventListener(new ValueEventListener() {

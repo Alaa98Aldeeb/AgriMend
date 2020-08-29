@@ -3,6 +3,7 @@ package com.example.agrimend;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -97,7 +98,7 @@ public class PostsLists extends AppCompatActivity {
     private ProgressBar myProgressBar;
     List<Post> postList;
     TextView defaultText;
-    RelativeLayout mainLayout;
+    ConstraintLayout mainLayout;
 
     @Override
     public void onBackPressed() {

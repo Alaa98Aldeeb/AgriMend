@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".introSlides">
@@ -8,59 +10,72 @@
     <ViewFlipper
         android:id="@+id/viewSlides"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:inAnimation="@anim/slide_in"
         android:outAnimation="@anim/slide_out"
-        android:inAnimation="@anim/slide_in">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <include
             android:id="@+id/firstSlide"
-            layout="@layout/welcom_message_first"/>
+            layout="@layout/welcom_message_first" />
 
-        <include layout="@layout/welcom_message_second"/>
+        <include layout="@layout/welcom_message_second" />
 
-        <include layout="@layout/welcom_message_third"/>
+        <include layout="@layout/welcom_message_third" />
 
-        <include layout="@layout/welcom_message_fourth"/>
+        <include layout="@layout/welcom_message_fourth" />
 
-        <include layout="@layout/welcom_message_final"/>
+        <include layout="@layout/welcom_message_final" />
 
     </ViewFlipper>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/gradient"
-        android:text="@string/next"
-        android:textColor="#fff"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"
-        android:padding="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        tools:ignore="ButtonStyle" />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSlides">
 
-    <Button
-        android:id="@+id/skipButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/gradient"
-        android:text="@string/skip"
-        android:textColor="#fff"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"
-        android:padding="10dp"
-        tools:ignore="ButtonStyle" />
-    </LinearLayout>
-</RelativeLayout>
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/gradient"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/skipButton" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="196dp" />
+
+        <Button
+            android:id="@+id/skipButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="@string/skip"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/nextButton"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
