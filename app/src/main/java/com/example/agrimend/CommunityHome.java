@@ -2,6 +2,7 @@ package com.example.agrimend;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -70,12 +72,14 @@ public class CommunityHome extends AppCompatActivity {
     private static final int REQUESCODE = 2 ;
     Dialog popAddPost ;
     ImageView popupUserImage,popupPostImage,popupAddBtn;
-    TextView popupTitle,popupDescription, popupPlantName;
+    EditText popupTitle,popupDescription, popupPlantName;
     ProgressBar popupClickProgress;
     private Uri pickedImgUri = null;
     FirebaseDatabase database;
     DatabaseReference myRef, userDatabase;
     String currentUserLocation;
+    LayoutInflater inflater;
+    View view;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -137,8 +141,8 @@ public class CommunityHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.community_home);
-
-
+        //inflater = getLayoutInflater();
+        //view = inflater.inflate(R.layout.popup_add_post,null);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         String uId = firebaseUser.getUid();
