@@ -46,7 +46,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         if (mData.get(position).getUserPhoto() != null){
             Glide.with(mContext).load(mData.get(position).getUserPhoto()).apply(RequestOptions.circleCropTransform()).into(holder.imgPostProfile);
         }else {
-            Glide.with(mContext).load(mData.get(position).getDefaultImg()).apply(RequestOptions.circleCropTransform()).into(holder.imgPostProfile);
+            Glide.with(mContext).load(R.drawable.userimage).apply(RequestOptions.circleCropTransform()).into(holder.imgPostProfile);
         }
 
     }
@@ -79,7 +79,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                 @Override
                 public void onClick(View view) {
                     Intent postDetailActivity = new Intent(mContext,PostDetails.class);
-                    int position = getAdapterPosition();
+                    int position = getBindingAdapterPosition();
 
                         postDetailActivity.putExtra("title",mData.get(position).getTitle());
                         postDetailActivity.putExtra("postImage",mData.get(position).getPicture());

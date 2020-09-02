@@ -7,7 +7,7 @@
 
     <ImageView
         android:padding="8dp"
-        android:background="#ffffff"
+        android:background="#fff"
         android:id="@+id/popup_user_image"
         android:layout_width="48dp"
         android:layout_height="0dp"
@@ -18,7 +18,7 @@
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/image" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:background="@drawable/popup_edittext_style"
         android:id="@+id/popup_title"
         android:layout_width="0dp"
@@ -30,24 +30,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:hint="@string/plant_name"
+    <com.google.android.material.textfield.TextInputEditText
         android:background="@drawable/popup_edittext_style"
         android:id="@+id/popup_plant_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/plant_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popup_title" />
 
-    <EditText
-        android:hint="@string/description"
+    <com.google.android.material.textfield.TextInputEditText
         android:background="@drawable/popup_edittext_style"
         android:id="@+id/popup_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/description"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -36,6 +36,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -72,7 +73,7 @@ public class CommunityHome extends AppCompatActivity {
     private static final int REQUESCODE = 2 ;
     Dialog popAddPost ;
     ImageView popupUserImage,popupPostImage,popupAddBtn;
-    EditText popupTitle,popupDescription, popupPlantName;
+    TextInputEditText popupTitle,popupDescription, popupPlantName;
     ProgressBar popupClickProgress;
     private Uri pickedImgUri = null;
     FirebaseDatabase database;
@@ -141,11 +142,10 @@ public class CommunityHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.community_home);
-        //inflater = getLayoutInflater();
-        //view = inflater.inflate(R.layout.popup_add_post,null);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         String uId = firebaseUser.getUid();
+
         //defaultImageHint = findViewById(R.id.default_text_add_image_post);
         userDatabase = FirebaseDatabase.getInstance().getReference("UsersAccounts").child(uId);
         userDatabase.addValueEventListener(new ValueEventListener() {
@@ -226,7 +226,6 @@ public class CommunityHome extends AppCompatActivity {
         popupClickProgress = popAddPost.findViewById(R.id.popup_progressBar);
 
         // load Current user profile photo
-
         if (firebaseUser.getPhotoUrl() != null){
             Glide.with(CommunityHome.this).load(firebaseUser.getPhotoUrl()).apply(RequestOptions.circleCropTransform())
                     .into(popupUserImage);
@@ -234,6 +233,7 @@ public class CommunityHome extends AppCompatActivity {
             Glide.with(CommunityHome.this).load(R.drawable.userimage).apply(RequestOptions.circleCropTransform())
                     .into(popupUserImage);
         }
+
 
         // Add post click Listener
         popupAddBtn.setOnClickListener(new View.OnClickListener() {

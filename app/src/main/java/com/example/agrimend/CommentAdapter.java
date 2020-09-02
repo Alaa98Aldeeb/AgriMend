@@ -55,7 +55,7 @@ public class CommentAdapter extends  RecyclerView.Adapter<CommentAdapter.Comment
     public void onBindViewHolder(@NonNull final CommentViewHolder holder, final int position) {
 
             if(mData.get(position).getUimg() == null){
-                Glide.with(mContext).load(mData.get(position).getDefaultImg()).apply(RequestOptions.circleCropTransform()).into(holder.img_user);
+                Glide.with(mContext).load(R.drawable.userimage).apply(RequestOptions.circleCropTransform()).into(holder.img_user);
             }else{
                 Glide.with(mContext).load(mData.get(position).getUimg()).apply(RequestOptions.circleCropTransform()).into(holder.img_user);
             }
